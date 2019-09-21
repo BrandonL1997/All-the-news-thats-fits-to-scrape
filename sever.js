@@ -6,8 +6,6 @@ var mongoose = require("mongoose");
 var logger = require("morgan");
 var cheerio = require("cheerio");
 var request = require("request");
-
-
 var Note = require("./models/note");
 var Article = require("./models/article");
 var databaseUrl = "mongodb://localhost/scrap";

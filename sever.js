@@ -33,7 +33,7 @@ var app = express();
 var port = process.env.PORT || 3000;
 
 app.use(logger("dev"));
-app.use(express.static("public"));
+app.use(express.static("/public"));
 app.use(body.urlencoded({ extended: false }));
 app.use(method("_method"));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
@@ -49,7 +49,7 @@ app.get("/", function(req, res) {
     if (data.length === 0) {
       res.render("placeholder", {
         message:
-          'There\'s nothing scraped yet. Please click "Scrape For Newest Articles" for fresh and delicious news.'
+          'There\'s nothing scraped yet. Please click "Scrape For Newest Articles" for new news.'
       });
     } else {
       res.render("index", { articles: data });

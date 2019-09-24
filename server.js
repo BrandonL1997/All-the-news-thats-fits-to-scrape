@@ -11,7 +11,7 @@ var Article = require("./models/article");
 var databaseUrl = "mongodb://localhost/scrap";
 
 if (process.env.MONGODB_URI) {
-  mongoose.connect(process.env.MONGODB_URI);
+  mongoose.connect(process.env.MONGODB_URI) || "mongodb://localhost/scrap";
 } else {
   mongoose.connect(databaseUrl);
 }
